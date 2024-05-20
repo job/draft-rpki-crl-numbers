@@ -109,13 +109,14 @@ version="3">
       </t>
 
       <t>
-        The ratchet functionality provided by CRL Numbers in other PKIs, in the RPKI is fully subsumed by Manifest Numbers <xref target="RFC9286" section="4.2.1"/> and how a validly formatted Manifest FileList contains exactly one entry for its associated CRL <xref target="RFC6481" section="2.2"/> and the message digest of that CRL.
-        Thus, without relying on CRL Number values, it is unambiguous for RPs to correctly determine which CRL the CA intended for the RP to use.
+        However, the ratchet functionality provided by CRL Numbers in other PKIs, in the RPKI is fully subsumed by Manifest Numbers <xref target="RFC9286" section="4.2.1"/> and how a validly formatted Manifest FileList contains exactly one entry for its associated CRL <xref target="RFC6481" section="2.2"/> and a collision-resistant message digest of that CRL.
+        Thus, it is unambiguous for RPs - without relying on CRL Number values - to correctly determine the CRL the CA intended for the RP to use.
       </t>
 
       <t>
         The above means that from the Relying Party perspective, the CRL Number value itself merely has diagnostic utility.
         RPs need not confirm that the extension is present, is validly encoded, and doesn't exceed its length bounds.
+        The CRL Number extension is marked non-critical, therefor RPKI RPs can silently ignore it.
       </t>
 
       <t>
