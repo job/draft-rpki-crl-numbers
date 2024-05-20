@@ -24,7 +24,8 @@ tocInclude="true"
 version="3">
 
   <front>
-    <title abbrev="RPKI CRL Numbers">Handling CRL Numbers in the RPKI
+    <title abbrev="RPKI CRL Numbers">
+      Handling CRL Numbers in the RPKI
     </title>
 
     <author fullname="Job Snijders" initials="J." surname="Snijders">
@@ -39,7 +40,7 @@ version="3">
     </author>
 
     <author fullname="Ben Maddison" initials="B" surname="Maddison">
-      <organization abbrev="Workonline">Workonline</organization>
+      <organization>Workonline</organization>
       <address>
         <postal>
           <street/>
@@ -134,6 +135,25 @@ version="3">
           <blockquote>
             <t>
               Where two or more CRLs are issued by the same CA, the CRL with the highest value of the "CRL Number" field supersedes all other CRLs issued by this CA.
+            </t>
+          </blockquote>
+        </li>
+        <li>
+          <t>In Section <xref target="RFC6487" section="5" sectionFormat="bare"/>, this paragraph is changed.</t>
+          <t>OLD</t>
+          <blockquote>
+            <t>
+              An RPKI CA MUST include the two extensions, Authority Key Identifier and CRL Number, in every CRL that it issues.
+              RPs MUST be prepared to process CRLs with these extensions.
+              No other CRL extensions are allowed.
+            </t>
+          </blockquote>
+          <t>NEW</t>
+          <blockquote>
+            <t>
+              An RPKI CA MUST include the two extensions, Authority Key Identifier and CRL Number, in every CRL that it issues.
+              No other CRL extensions are allowed.
+              RPs MUST be prepared to process the AKI extensions, and MUST ignore the CRL Number.
             </t>
           </blockquote>
         </li>
