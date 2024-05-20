@@ -109,8 +109,8 @@ version="3">
       </t>
 
       <t>
-        However, the ratchet functionality provided by CRL Numbers in other PKIs, in the RPKI is fully subsumed by Manifest Numbers <xref target="RFC9286" section="4.2.1"/> and how a validly formatted Manifest FileList contains exactly one entry for its associated CRL <xref target="RFC6481" section="2.2"/> and a collision-resistant message digest of that CRL.
-        Thus, it is unambiguous for RPs - without relying on CRL Number values - to correctly determine the CRL the CA intended for the RP to use.
+        The ratchet functionality provided by CRL Numbers in other PKIs is fully subsumed by Manifest Numbers in the RPKI <xref target="RFC9286" section="4.2.1"/>: a validly formatted Manifest FileList contains exactly one entry for its associated CRL <xref target="RFC6481" section="2.2"/> together with a collision-resistant message digest of that CRL.
+        Thus, the CRL intended by the CA can be determined unambiguously by RPs without inspecting the CRL Number value.
       </t>
 
       <t>
