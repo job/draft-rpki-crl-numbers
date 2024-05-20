@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- draft submitted in xml v3 -->
+
+<!DOCTYPE rfc [
+ <!ENTITY nbsp    "&#160;">
+ <!ENTITY zwsp   "&#8203;">
+ <!ENTITY nbhy   "&#8209;">
+ <!ENTITY wj     "&#8288;">
+]> 
+
+<rfc xmlns:xi="http://www.w3.org/2001/XInclude" 
+category="std" 
+docName="draft-spaghetti-sidrops-rpki-crl-numbers-00"
+ipr="trust200902" 
+xml:lang="en" 
+sortRefs="true" 
+submissionType="IETF" 
+consensus="true" 
+updates="6487"
+obsoletes=""
+symRefs="true" 
+tocInclude="true"
+version="3">
+
+  <front>
+    <title abbrev="RPKI CRL Numbers">Handling CRL Numbers in the RPKI
+    </title>
+
+    <author fullname="Job Snijders" initials="J." surname="Snijders">
+      <organization>Fastly</organization>
+      <address>
+        <postal>
+         <postalLine>Amsterdam</postalLine>
+         <postalLine>The Netherlands</postalLine>
+        </postal>
+        <email>job@fastly.com</email>
+      </address>
+    </author>
+
+    <author fullname="Ben Maddison" initials="B" surname="Maddison">
+      <organization abbrev="Workonline">Workonline</organization>
+      <address>
+        <postal>
+          <street/>
+          <city>Cape Town</city>
+          <country>South Africa</country>
+        </postal>
+        <email>benm@workonline.africa</email>
+      </address>
+    </author>
+
+    <date/>
+
+   <area>Operations and Management Area (OPS)</area>
+   <workgroup>sidrops</workgroup> 
+
+   <keyword>RPKI</keyword>
+   <keyword>Routing Security</keyword>
+   <keyword>BGP</keyword>
+   <keyword>X.509</keyword>
+   <keyword>CRL</keyword>
+
+    <abstract>
+      <t>
+        This document clarifies how Resource Public Key Infrastructure (RPKI) Relying Parties (RPs) handle the Certificate Revocation List (CRL) Number extension.
+        This document updates RFC 6487.
+      </t>
+    </abstract>
+  </front>
+  <middle>
+
+    <section anchor="intro">
+      <name>Introduction</name>
+      <t>
+      </t>
+
+     <section anchor="reqs-lang">
+      <name>Requirements Language</name>
+       <t>
+         The key words "<bcp14>MUST</bcp14>", "<bcp14>MUST NOT</bcp14>", "<bcp14>REQUIRED</bcp14>", "<bcp14>SHALL</bcp14>", "<bcp14>SHALL NOT</bcp14>", "<bcp14>SHOULD</bcp14>", "<bcp14>SHOULD NOT</bcp14>", "<bcp14>RECOMMENDED</bcp14>", "<bcp14>NOT RECOMMENDED</bcp14>", "<bcp14>MAY</bcp14>", and "<bcp14>OPTIONAL</bcp14>" in this document are to be interpreted as described in BCP&nbsp;14 <xref target="RFC2119"/> <xref target="RFC8174"/> when, and only when, they appear in all capitals, as shown here.</t>
+     </section>
+
+      <section anchor="Changes">
+        <name>Changes from RFC 6487</name>
+        <t>
+          This section summarizes the significant changes between <xref target="RFC6487"/> and the profile described in this document.
+        </t>
+        <ul>
+          <li>Incorporated errata for RFC 6487?</li>
+          <li>Clarifications for handling of CRL Numbers for RPs.</li>
+        </ul>
+      </section>
+    </section>
+
+    <section anchor="Related">
+      <name>Related Work</name>
+      <t>
+        It is assumed that the reader is familiar with the terms and concepts described in "<xref target="RFC5280" format="title"/>" <xref target="RFC5280" format="default"/> and "<xref target="RFC6481" format="title"/>" <xref target="RFC6481" format="default"/>.
+      </t>
+    </section>
+
+    <section anchor="Background">
+      <name>Background</name>
+      <t>
+        <xref target="RFC5280" section="5.2.3" /> describes the CRL Number is a monotonically increasing sequence number, and "This extension allows users to easily determine when a particular CRL supersedes another CRL."
+        In other words, the CRL Number is intended as a ratchet mechanism to help guard against replay attacks.
+      </t>
+      <t>
+        The ratchet functionality provided by CRL Numbers in other PKIs, in the RPKI is fully subsumed by Manifest Numbers <xref target="RFC9286" section="4.2.1"/> and how a validly formatted Manifest FileList contains exactly one entry for its associated CRL <xref target="RFC6481" section="2.2"/> and the message digest of that CRL.
+        Thus, without relying on CRL Number values, it is unambiguous for RPs to correctly determine which CRL the CA intended for the RP to use.
+      </t>
+
+      <t>
+        The above means that from the Relying Party perspective, the CRL Number value itself merely has diagnostic utility.
+        RPs need not confirm that the extension is present, is validly encoded, and doesn't exceed its length bounds.
+      </t>
+
+      <t>
+        The historical reason the CRL Number extension MUST be present in RPKI CRLs was to make the RPKI CRL format comply with the X.509 v2 CRL profile.
+      </t>
+
+    </section>
+
+    <section>
+    <name>Updates to RFC 6487</name>
+      <t>
+        This section updates <xref target="RFC6487"/>.
+      </t>
+      <ul spacing="normal">
+        <li>
+          <t>In Section <xref target="RFC6487" section="5" sectionFormat="bare"/>, this paragraph is removed.</t>
+          <t>REMOVED</t>
+          <blockquote>
+            <t>
+              Where two or more CRLs are issued by the same CA, the CRL with the highest value of the "CRL Number" field supersedes all other CRLs issued by this CA.
+            </t>
+          </blockquote>
+        </li>
+      </ul>
+    </section>
+
+    <section anchor="iana">
+      <name>IANA Considerations</name>
+      <t>
+        This document has no IANA actions.
+      </t>
+    </section>
+
+  </middle>
+
+  <back>
+    <references>
+      <name>References</name>
+      <references>
+        <name>Normative References</name>
+
+	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6487.xml"/>
+	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6481.xml"/>
+	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.9286.xml"/>
+
+      </references>
+
+      <references>
+        <name>Informative References</name>
+
+	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5280.xml"/>
+
+      </references>
+    </references>
+
+    <section anchor="acknowledgements" numbered="false">
+      <name>Acknowledgements</name>
+      <t>
+        The authors wish to thank <contact fullname="Theo Buehler"/> for their help and contributions.
+      </t>
+    </section>
+  </back>
+</rfc>
