@@ -151,7 +151,7 @@ version="3">
           <t>NEW</t>
           <blockquote>
             <t>
-              An RPKI CA MUST include the two extensions, Authority Key Identifier and CRL Number, in every CRL that it issues.
+              An RPKI CA MUST include the two extensions, Authority Key Identifier (AKI) and CRL Number, in every CRL that it issues.
               No other CRL extensions are allowed.
               RPs MUST be prepared to process the AKI extensions, and MUST ignore the CRL Number.
             </t>
