@@ -88,8 +88,8 @@ version="3">
           This section summarizes the significant changes between <xref target="RFC6487"/> and the profile described in this document.
         </t>
         <ul>
-          <li>Incorporated errata for RFC 6487?</li>
           <li>Clarifications for handling of CRL Numbers for RPs.</li>
+          <li>Incorporated RFC 6487 Errata 3205.</li>
         </ul>
       </section>
     </section>
