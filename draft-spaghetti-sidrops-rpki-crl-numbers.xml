@@ -85,12 +85,16 @@ version="3">
 
       <t>
         The above means that from the Relying Party perspective, the CRL Number value itself merely has diagnostic utility.
-        RPs need not confirm that the extension is present, is validly encoded, and doesn't exceed its length bounds.
-        The CRL Number extension is marked non-critical, therefore RPKI RPs can silently ignore it.
+        RPs need not confirm that the extension is present, is validly encoded, or doesn't exceed its length bounds.
+<!-- This sentence still feels weak: "The CRL Number extension is marked non-critical, therefore RPKI RPs can silently ignore it." - leave it out for now? -->
       </t>
 
       <t>
         The historical reason the CRL Number extension MUST be present in RPKI CRLs was to make the RPKI CRL format comply with the X.509 v2 CRL profile, as per <xref target="RFC5280" section="5.2"/>.
+      </t>
+
+      <t>
+        This document updates <xref target="RFC6487"/> with clarifications for RP implementers.
       </t>
 
      <section anchor="reqs-lang">
