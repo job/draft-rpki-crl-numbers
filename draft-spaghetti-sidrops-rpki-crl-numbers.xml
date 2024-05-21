@@ -84,24 +84,21 @@ version="3">
     <section anchor="intro">
       <name>Introduction</name>
       <t>
-        <xref target="RFC5280" section="5.2.3" /> describes the CRL Number value as a monotonically increasing sequence number, and "This extension allows users to easily determine when a particular CRL supersedes another CRL."
-        In other words, in most PKIs the CRL Number extension is intended as a ratchet device to help guard against replay attacks.
+        <xref target="RFC5280" section="5.2.3" /> describes the value of the CRL Number extension as a monotonically increasing sequence number, which "allows users to easily determine when a particular CRL supersedes another CRL."
+        In other words, in PKIs in which it is possible for relying parties to encounter multiple usable CRLs, the CRL Number extension is a means for the relying party to determine which CRL(s) to rely upon.
       </t>
 
       <t>
-        The ratchet functionality provided by CRL Numbers in other PKIs, is fully subsumed by monotonically increasing Manifest Numbers (<xref target="RFC9286" section="4.2.1"/>) in the RPKI.
-        A validly formatted Manifest FileList contains exactly one entry for its associated CRL (see also <xref target="RFC6481" section="2.2"/>), together with a collision-resistant message digest of that CRL, referenced by name from the certificate's CRL Distribution Points extension.
-        Thus, the CRL the CA intended for RPs to use can unambiguously be determined by RPs, without inspecting any CRL Number values.
+        In the RPKI, a well formed Manifest FileList contains exactly one entry for its associated CRL, together with a collision-resistant message digest of that CRLs contents (see also <xref target="RFC6481" section="2.2"/> and <xref target="9286" section="2"/>).
+        Additionally, the target of the CRL Distribution Points extension in an RPKI Resource Certificate is the same CRL object listed on the issuing CAs current manifest <xref target="RFC6487" section="4.8.6"/>.
+        Together, these properties guarantee that RPKI relying parties will always be able to unambiguously identify exactly one current CRL for each RPKI CA.
+        Thus, in the RPKI, the ordering functionality provided by CRL Numbers is fully subsumed by monotonically increasing Manifest Numbers (<xref target="RFC9286" section="4.2.1"/>), thereby obviating the need for RPKI relying parties to process CRL Number extensions at all.
       </t>
 
       <t>
-        The above means that from the Relying Party perspective, the CRL Number value itself merely has diagnostic utility.
-        RPs need not confirm that the extension is present, validly encoded, or doesn't exceed its length bounds.
-<!-- This sentence still feels weak: "The CRL Number extension is marked non-critical, therefore RPKI RPs can silently ignore it." - leave it out for now? -->
-      </t>
-
-      <t>
-        The historical reason the CRL Number extension MUST be present in RPKI CRLs was to make the RPKI CRL format comply with the X.509 v2 CRL profile, as per <xref target="RFC5280" section="5.2"/>.
+        Therefore, although the CRL Number extension is mandatory in RPKI CRLs for compliance with the X.509 v2 CRL Profile <xref target="RFC5280" section="5"/>, any use of this extension by RPKI relying parties merely adds complexity and fragility to RPKI Resource Certificate path validation.
+        The CRL Number extension is always designated non-critical <xref target="RFC5280" section="5.2.3"/>, thus RPKI relying parties need not be able to process this extension.
+        This document mandates that RPKI relying parties MUST NOT process the CRL Number extension, including performing any wellformedness checks on its contents.
       </t>
 
       <t>
