@@ -24,8 +24,8 @@ tocInclude="true"
 version="3">
 
   <front>
-    <title abbrev="RPKI CRL Numbers">
-      Handling CRL Numbers in the RPKI
+    <title abbrev="RPKI CRL Number handling for RPs">
+      Relying Party Handling of Resource Public Key Infrastructure (RPKI) Certificate Revocation List (CRL) Number Extensions
     </title>
 
     <author fullname="Job Snijders" initials="J." surname="Snijders">
