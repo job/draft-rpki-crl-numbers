@@ -104,8 +104,8 @@ version="3">
     <section anchor="Background">
       <name>Background</name>
       <t>
-        <xref target="RFC5280" section="5.2.3" /> describes the CRL Number as a monotonically increasing sequence number, and "This extension allows users to easily determine when a particular CRL supersedes another CRL."
-        In other words, the CRL Number is intended as a ratchet mechanism to help guard against replay attacks.
+        <xref target="RFC5280" section="5.2.3" /> describes the CRL Number value as a monotonically increasing sequence number, and "This extension allows users to easily determine when a particular CRL supersedes another CRL."
+        In other words, the CRL Number extension is intended as a ratchet device to help guard against replay attacks.
       </t>
 
       <t>
