@@ -86,7 +86,7 @@ version="3">
 
       <t>
         The above means that from the Relying Party perspective, the CRL Number value itself merely has diagnostic utility.
-        RPs need not confirm that the extension is present, is validly encoded, or doesn't exceed its length bounds.
+        RPs need not confirm that the extension is present, validly encoded, or doesn't exceed its length bounds.
 <!-- This sentence still feels weak: "The CRL Number extension is marked non-critical, therefore RPKI RPs can silently ignore it." - leave it out for now? -->
       </t>
 
