@@ -74,6 +74,23 @@ version="3">
     <section anchor="intro">
       <name>Introduction</name>
       <t>
+        <xref target="RFC5280" section="5.2.3" /> describes the CRL Number value as a monotonically increasing sequence number, and "This extension allows users to easily determine when a particular CRL supersedes another CRL."
+        In other words, the CRL Number extension is intended as a ratchet device to help guard against replay attacks.
+      </t>
+
+      <t>
+        The ratchet functionality provided by CRL Numbers in other PKIs is fully subsumed by Manifest Numbers in the RPKI by <xref target="RFC9286" section="4.2.1"/>: a validly formatted Manifest FileList contains exactly one entry for its associated CRL together with a collision-resistant message digest of that CRL (see also <xref target="RFC6481" section="2.2"/>).
+        Thus, the CRL intended by the CA can be determined unambiguously by RPs without inspecting the CRL Number value.
+      </t>
+
+      <t>
+        The above means that from the Relying Party perspective, the CRL Number value itself merely has diagnostic utility.
+        RPs need not confirm that the extension is present, is validly encoded, and doesn't exceed its length bounds.
+        The CRL Number extension is marked non-critical, therefore RPKI RPs can silently ignore it.
+      </t>
+
+      <t>
+        The historical reason the CRL Number extension MUST be present in RPKI CRLs was to make the RPKI CRL format comply with the X.509 v2 CRL profile, as per <xref target="RFC5280" section="5.2"/>.
       </t>
 
      <section anchor="reqs-lang">
@@ -99,30 +116,6 @@ version="3">
       <t>
         It is assumed that the reader is familiar with the terms and concepts described in "<xref target="RFC5280" format="title"/>" <xref target="RFC5280" format="default"/> and "<xref target="RFC6481" format="title"/>" <xref target="RFC6481" format="default"/>.
       </t>
-    </section>
-
-    <section anchor="Background">
-      <name>Background</name>
-      <t>
-        <xref target="RFC5280" section="5.2.3" /> describes the CRL Number value as a monotonically increasing sequence number, and "This extension allows users to easily determine when a particular CRL supersedes another CRL."
-        In other words, the CRL Number extension is intended as a ratchet device to help guard against replay attacks.
-      </t>
-
-      <t>
-        The ratchet functionality provided by CRL Numbers in other PKIs is fully subsumed by Manifest Numbers in the RPKI by <xref target="RFC9286" section="4.2.1"/>: a validly formatted Manifest FileList contains exactly one entry for its associated CRL together with a collision-resistant message digest of that CRL (see also <xref target="RFC6481" section="2.2"/>).
-        Thus, the CRL intended by the CA can be determined unambiguously by RPs without inspecting the CRL Number value.
-      </t>
-
-      <t>
-        The above means that from the Relying Party perspective, the CRL Number value itself merely has diagnostic utility.
-        RPs need not confirm that the extension is present, is validly encoded, and doesn't exceed its length bounds.
-        The CRL Number extension is marked non-critical, therefore RPKI RPs can silently ignore it.
-      </t>
-
-      <t>
-        The historical reason the CRL Number extension MUST be present in RPKI CRLs was to make the RPKI CRL format comply with the X.509 v2 CRL profile, as per <xref target="RFC5280" section="5.2"/>.
-      </t>
-
     </section>
 
     <section>
