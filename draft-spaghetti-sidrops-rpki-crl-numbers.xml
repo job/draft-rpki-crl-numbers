@@ -51,6 +51,16 @@ version="3">
       </address>
     </author>
 
+    <author fullname="Theo Buehler" initials="T." surname="Buehler">
+      <organization>OpenBSD</organization>
+      <address>
+        <postal>
+          <country>CH</country>
+        </postal>
+        <email>tb@openbsd.org</email>
+      </address>
+    </author>
+
     <date/>
 
    <area>Operations and Management Area (OPS)</area>
