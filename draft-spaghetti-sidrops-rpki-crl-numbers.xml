@@ -97,8 +97,7 @@ version="3">
 
       <t>
         Therefore, although the CRL Number extension is mandatory in RPKI CRLs for compliance with the X.509 v2 CRL Profile (<xref target="RFC5280" section="5"/>), any use of this extension by RPKI RPs merely adds complexity and fragility to RPKI Resource Certificate path validation.
-        The CRL Number extension is always designated non-critical (<xref target="RFC5280" section="5.2.3"/>), thus RPKI RPs need not be able to process this extension.
-        This document mandates that RPKI RPs MUST NOT process the CRL Number extension, including performing any wellformedness checks on its contents.
+        This document mandates that RPKI RPs MUST ignore the CRL Number extension.
       </t>
 
       <t>
