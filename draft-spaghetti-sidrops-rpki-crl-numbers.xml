@@ -201,7 +201,7 @@ version="3">
     <section anchor="acknowledgements" numbered="false">
       <name>Acknowledgements</name>
       <t>
-        The authors wish to thank <contact fullname="Tom Harrison"/> for whose observations prompted this internet-draft proposal.
+        The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this internet-draft proposal.
       </t>
     </section>
   </back>
