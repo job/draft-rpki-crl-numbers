@@ -64,7 +64,7 @@ version="3">
 
     <abstract>
       <t>
-        This document clarifies how Resource Public Key Infrastructure (RPKI) Relying Parties (RPs) handle the Certificate Revocation List (CRL) Number extension.
+        This document clarifies how Resource Public Key Infrastructure (RPKI) Relying Parties (RPs) handle Certificate Revocation List (CRL) Number extensions.
         This document updates RFC 6487.
       </t>
     </abstract>
