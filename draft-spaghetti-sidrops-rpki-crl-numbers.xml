@@ -89,7 +89,7 @@ version="3">
       </t>
 
       <t>
-        In the RPKI, a well formed Manifest FileList contains exactly one entry for its associated CRL, together with a collision-resistant message digest of that CRLs contents (see <xref target="RFC6481" section="2.2"/> and <xref target="RFC9286" section="2"/>).
+        In the RPKI, a well-formed Manifest FileList contains exactly one entry for its associated CRL, together with a collision-resistant message digest of that CRLs contents (see <xref target="RFC6481" section="2.2"/> and <xref target="RFC9286" section="2"/>).
         Additionally, the target of the CRL Distribution Points extension in an RPKI Resource Certificate is the same CRL object listed on the issuing CAs current manifest (see <xref target="RFC6487" section="4.8.6"/>).
         Together, these properties guarantee that RPKI RPs will always be able to unambiguously identify exactly one current CRL for each RPKI CA.
         Thus, in the RPKI, the ordering functionality provided by CRL Numbers is fully subsumed by monotonically increasing Manifest Numbers (<xref target="RFC9286" section="4.2.1"/>), thereby obviating the need for RPKI RPs to process CRL Number extensions at all.
