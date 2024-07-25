@@ -214,6 +214,14 @@ version="3">
           </front>
         </reference>
 
+	<reference anchor="routinator" target="https://github.com/NLnetLabs/routinator">
+          <front>
+            <title>Routinator</title>
+            <author fullname="NLnetLabs"/>
+            <date/>
+          </front>
+        </reference>
+
       </references>
     </references>
 
@@ -243,6 +251,9 @@ version="3">
         <li>
           <xref target="FORT"/>
         </li>
+	<li>
+	  <xref target="routinator"/> additionally checks that the CRL Number is non-negative and fits into 20 octets.
+	</li>
       </ul>
     </section>
 
