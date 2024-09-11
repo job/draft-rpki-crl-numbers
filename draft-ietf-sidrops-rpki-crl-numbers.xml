@@ -163,7 +163,7 @@ version="3">
             </t>
             <ul>
 	      <li>RPs MUST process the AKI extension.</li>
-	      <li>RPs MUST ignore the CRL Number extension except for validating that it is non-critical and contains a non-negative integer less than or equal to 2^159-1.</li>
+	      <li>RPs MUST ignore the CRL Number extension except for checking that it is marked as non-critical and contains a non-negative integer less than or equal to 2^159-1.</li>
             </ul>
           </blockquote>
         </li>
