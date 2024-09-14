@@ -11,7 +11,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" 
 category="std" 
-docName="draft-ietf-sidrops-rpki-crl-numbers-00"
+docName="draft-ietf-sidrops-rpki-crl-numbers-01"
 ipr="trust200902" 
 xml:lang="en" 
 sortRefs="true" 
@@ -243,10 +243,6 @@ version="3">
         It is up to the individual working groups to use this information as they see fit".
       </t>
 
-      <t>
-        The following RP implementations check for the presence of the CRL Number extension and whether it is marked non-critical, and otherwise ignore it.
-      </t>
-
       <ul>
         <li>
           OpenBSD <xref target="rpki-client"/>
@@ -255,11 +251,10 @@ version="3">
           <xref target="FORT"/>
         </li>
 	<li>
-	  <xref target="routinator"/> additionally checks that the CRL Number is non-negative and fits into 20 octets.
+	  <xref target="routinator"/>
 	</li>
       </ul>
     </section>
-
 
     <section anchor="acknowledgements" numbered="false">
       <name>Acknowledgements</name>
