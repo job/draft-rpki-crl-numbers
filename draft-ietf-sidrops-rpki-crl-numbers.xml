@@ -137,11 +137,18 @@ version="3">
       </t>
       <ul spacing="normal">
         <li>
-          <t>In Section <xref target="RFC6487" section="5" sectionFormat="bare"/>, this paragraph is removed.</t>
-          <t>REMOVED</t>
+          <t>In Section <xref target="RFC6487" section="5" sectionFormat="bare"/>, this paragraph is changed.</t>
+          <t>OLD</t>
           <blockquote>
             <t>
               Where two or more CRLs are issued by the same CA, the CRL with the highest value of the "CRL Number" field supersedes all other CRLs issued by this CA.
+            </t>
+          </blockquote>
+          <t>NEW</t>
+          <blockquote>
+            <t>
+              When issuing a new CRL, the CA SHOULD use a monotonically increasing sequence number in the "CRL Number" extension to aid debugging efforts.
+              It is RECOMMENDED that the "CRL Number" matches the "manifestNumber" of the manifest that will include this CRL (see <xref target="RFC9286" section="4.2.1" />).
             </t>
           </blockquote>
         </li>
@@ -259,7 +266,7 @@ version="3">
     <section anchor="acknowledgements" numbered="false">
       <name>Acknowledgements</name>
       <t>
-        The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this internet-draft proposal and <contact fullname="Alberto Leiva"/> for valuable feedback.
+        The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this internet-draft proposal and <contact fullname="Alberto Leiva"/> and <contact fullname="Tim Bruijnzeels"/> for valuable feedback.
       </t>
     </section>
   </back>
