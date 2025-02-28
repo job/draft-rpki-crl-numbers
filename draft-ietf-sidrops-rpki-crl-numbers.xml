@@ -177,6 +177,25 @@ version="3">
       </ul>
     </section>
 
+    <section anchor="security">
+      <name>Security Considerations</name>
+      <t>
+        The Security Considerations of <xref target="RFC3779"/>, <xref target="RFC5280"/>, and <xref target="RFC6487"/> apply to Resource Certificates and CRLs.
+      </t>
+      <t>
+        This document clarifies that in the RPKI there is exactly one CRL appropriate and relevant for determining the revocation status of a given resource certificate.
+        It is the unique CRL object that is simultaneously:
+      </t>
+      <ul>
+        <li>the target of the certificate's CRL Distribution Points extension,</li>
+        <li>listed in the issuing CA's current Manifest FileList and has matching hash (see <xref target="RFC9286" section="4.2.1"/>).</li>
+      </ul>
+      <t>
+        This is a more stringent requirement than is generally used in other X.509 PKIs.
+        It is therefore important for RPs to use an implementation of the X.509 path validation algorithm that allows specifying the CRL objects to use for each of the intermediate CAs and the leaf.
+      </t>
+    </section>
+
     <section anchor="iana">
       <name>IANA Considerations</name>
       <t>
@@ -203,6 +222,7 @@ version="3">
       <references>
         <name>Informative References</name>
 
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.3779.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5280.xml"/>
 
         <reference anchor="rpki-client" target="https://www.rpki-client.org/">
