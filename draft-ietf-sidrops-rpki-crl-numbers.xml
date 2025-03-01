@@ -7,19 +7,19 @@
  <!ENTITY zwsp   "&#8203;">
  <!ENTITY nbhy   "&#8209;">
  <!ENTITY wj     "&#8288;">
-]> 
+]>
 
-<rfc xmlns:xi="http://www.w3.org/2001/XInclude" 
-category="std" 
+<rfc xmlns:xi="http://www.w3.org/2001/XInclude"
+category="std"
 docName="draft-ietf-sidrops-rpki-crl-numbers-01"
-ipr="trust200902" 
-xml:lang="en" 
-sortRefs="true" 
-submissionType="IETF" 
-consensus="true" 
+ipr="trust200902"
+xml:lang="en"
+sortRefs="true"
+submissionType="IETF"
+consensus="true"
 updates="6487"
 obsoletes=""
-symRefs="true" 
+symRefs="true"
 tocInclude="true"
 version="3">
 
@@ -64,7 +64,7 @@ version="3">
     <date/>
 
    <area>Operations and Management Area (OPS)</area>
-   <workgroup>SIDROPS</workgroup> 
+   <workgroup>SIDROPS</workgroup>
 
    <keyword>RPKI</keyword>
    <keyword>Routing Security</keyword>
@@ -169,8 +169,8 @@ version="3">
               No other CRL extensions are allowed.
             </t>
             <ul>
-	      <li>RPs MUST process the AKI extension.</li>
-	      <li>RPs MUST ignore the CRL Number extension except for checking that it is marked as non-critical and contains a non-negative integer less than or equal to 2^159-1.</li>
+              <li>RPs MUST process the AKI extension.</li>
+              <li>RPs MUST ignore the CRL Number extension except for checking that it is marked as non-critical and contains a non-negative integer less than or equal to 2^159-1.</li>
             </ul>
           </blockquote>
         </li>
@@ -192,18 +192,18 @@ version="3">
       <references>
         <name>Normative References</name>
 
-	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
-	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6487.xml"/>
-	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6481.xml"/>
-	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
-	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.9286.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6487.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6481.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.9286.xml"/>
 
       </references>
 
       <references>
         <name>Informative References</name>
 
-	<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5280.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5280.xml"/>
 
         <reference anchor="rpki-client" target="https://www.rpki-client.org/">
           <front>
@@ -224,7 +224,7 @@ version="3">
           </front>
         </reference>
 
-	<reference anchor="routinator" target="https://github.com/NLnetLabs/routinator">
+        <reference anchor="routinator" target="https://github.com/NLnetLabs/routinator">
           <front>
             <title>Routinator</title>
             <author fullname="NLnetLabs"/>
@@ -257,9 +257,9 @@ version="3">
         <li>
           <xref target="FORT"/>
         </li>
-	<li>
-	  <xref target="routinator"/>
-	</li>
+        <li>
+          <xref target="routinator"/>
+        </li>
       </ul>
     </section>
 
