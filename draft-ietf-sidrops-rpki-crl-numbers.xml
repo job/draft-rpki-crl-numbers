@@ -178,6 +178,14 @@ version="3">
       </ul>
     </section>
 
+    <section anchor="operational">
+    <name>Operational Considerations</name>
+    <t>
+      This document has no operational considerations.
+    </t>
+
+    </section>
+
     <section anchor="security">
       <name>Security Considerations</name>
       <t>
