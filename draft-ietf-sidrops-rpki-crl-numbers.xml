@@ -181,7 +181,7 @@ version="3">
     <section anchor="operational">
     <name>Operational Considerations</name>
     <t>
-      This document has no operational considerations.
+      This document has no additional operational considerations compared to <xref target="RFC6487" section="9"/>.
     </t>
 
     </section>
