@@ -148,7 +148,7 @@ version="3">
           <t>NEW</t>
           <blockquote>
             <t>
-              When issuing a new CRL, the CA SHOULD use a monotonically increasing sequence number in the "CRL Number" extension to aid debugging efforts.
+              Per <xref target="RFC5280" section="5.2.3"/>, CAs issue new CRLs using a monotonically increasing sequence number in the "CRL Number" extension.
               It is RECOMMENDED that the "CRL Number" matches the "manifestNumber" of the manifest that will include this CRL (see <xref target="RFC9286" section="4.2.1" />).
             </t>
           </blockquote>
