@@ -84,24 +84,25 @@ version="3">
     <section anchor="intro">
       <name>Introduction</name>
       <t>
-        <xref target="RFC5280" section="5.2.3" /> describes the value of the CRL Number extension as a monotonically increasing sequence number, which "allows users to easily determine when a particular CRL supersedes another CRL."
-        In other words, in PKIs in which it is possible for RPs to encounter multiple usable CRLs, the CRL Number extension is a means for the RP to determine which CRL(s) to rely upon.
+        <xref target="RFC5280" section="5.2.3" /> describes the value of the Certificate Revocation List (CRL) Number extension as a monotonically increasing sequence number, which "allows users to easily determine when a particular CRL supersedes another CRL".
+        In other words, in Public Key Infrastructures (PKIs) in which it is possible for Relying Parties (RPs) to encounter multiple usable CRLs, the CRL Number extension is a means for an RP to determine which CRLs to rely upon.
       </t>
 
       <t>
-        In the RPKI, a well-formed Manifest FileList contains exactly one entry for its associated CRL, together with a collision-resistant message digest of that CRLs contents (see <xref target="RFC6481" section="2.2"/> and <xref target="RFC9286" section="2"/>).
-        Additionally, the target of the CRL Distribution Points extension in an RPKI Resource Certificate is the same CRL object listed on the issuing CAs current manifest (see <xref target="RFC6487" section="4.8.6"/>).
+        In the Resource Public Key Infrastructure (RPKI), a well-formed Manifest FileList contains exactly one entry for its associated CRL, together with a collision-resistant message digest of that CRL's contents (see <xref target="RFC6481" section="2.2"/> and <xref target="RFC9286" section="2"/>).
+        Additionally, the target of the CRL Distribution Points extension in an RPKI Resource Certificate is the same CRL object listed on the issuing Certification Authorities (CAs) current manifest (see <xref target="RFC6487" section="4.8.6"/>).
         Together, these properties guarantee that RPKI RPs will always be able to unambiguously identify exactly one current CRL for each RPKI CA.
         Thus, in the RPKI, the ordering functionality provided by CRL Numbers is fully subsumed by monotonically increasing Manifest Numbers (<xref target="RFC9286" section="4.2.1"/>), thereby obviating the need for RPKI RPs to process CRL Number extensions at all.
       </t>
 
       <t>
         Therefore, although the CRL Number extension is mandatory in RPKI CRLs for compliance with the X.509 v2 CRL Profile (<xref target="RFC5280" section="5"/>), any use of this extension by RPKI RPs merely adds complexity and fragility to RPKI Resource Certificate path validation.
-        This document mandates that RPKI RPs MUST ignore the CRL Number extension.
+        This document mandates that RPKI RPs ignore the CRL Number extension.
       </t>
 
       <t>
         This document updates <xref target="RFC6487"/> with clarifications for RP implementers.
+        Refer to <xref target="Updates"/> for more details.
       </t>
 
      <section anchor="reqs-lang">
@@ -120,24 +121,24 @@ version="3">
     <section anchor="Changes">
       <name>Changes from RFC 6487</name>
         <t>
-          This section summarizes the significant changes between <xref target="RFC6487"/> this document.
+          This section summarizes the significant changes between <xref target="RFC6487"/> and this document.
         </t>
         <ul>
           <li>Clarifications for handling of CRL Numbers for RPs.</li>
-          <li>Incorporated RFC 6487 Errata 3205.</li>
+          <li>Integration of RFC 6487 Errata 3205.</li>
         </ul>
     </section>
 
     </section>
 
-    <section>
+    <section anchor="Updates">
     <name>Updates to RFC 6487</name>
       <t>
-        This section updates <xref target="RFC6487"/>.
+        This section updates <xref target="RFC6487" section="5"/> as follows:
       </t>
       <ul spacing="normal">
         <li>
-          <t>In Section <xref target="RFC6487" section="5" sectionFormat="bare"/>, this paragraph is changed.</t>
+          <t>First change:</t>
           <t>OLD</t>
           <blockquote>
             <t>
@@ -153,7 +154,7 @@ version="3">
           </blockquote>
         </li>
         <li>
-          <t>In Section <xref target="RFC6487" section="5" sectionFormat="bare"/>, this paragraph is changed.</t>
+          <t>Second change:</t>
           <t>OLD</t>
           <blockquote>
             <t>
@@ -183,11 +184,11 @@ version="3">
         The Security Considerations of <xref target="RFC3779"/>, <xref target="RFC5280"/>, and <xref target="RFC6487"/> apply to Resource Certificates and CRLs.
       </t>
       <t>
-        This document clarifies that in the RPKI there is exactly one CRL appropriate and relevant for determining the revocation status of a given resource certificate.
+        This document clarifies that, in the RPKI, there is exactly one CRL appropriate and relevant for determining the revocation status of a given resource certificate.
         It is the unique CRL object that is simultaneously:
       </t>
       <ul>
-        <li>the target of the certificate's CRL Distribution Points extension,</li>
+        <li>the target of the certificate's CRL Distribution Points extension, and</li>
         <li>listed in the issuing CA's current Manifest FileList and has matching hash (see <xref target="RFC9286" section="4.2.1"/>).</li>
       </ul>
       <t>
@@ -286,7 +287,7 @@ version="3">
     <section anchor="acknowledgements" numbered="false">
       <name>Acknowledgements</name>
       <t>
-        The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this internet-draft proposal and <contact fullname="Alberto Leiva"/> and <contact fullname="Tim Bruijnzeels"/> for valuable feedback.
+      The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this document, <contact fullname="Alberto Leiva"/>, <contact fullname="Tim Bruijnzeels"/>, and <contact fullname="Mohamed Boucadair"/> for valuable feedback.
       </t>
     </section>
   </back>
