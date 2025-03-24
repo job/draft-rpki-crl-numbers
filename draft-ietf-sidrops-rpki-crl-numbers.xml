@@ -101,7 +101,7 @@ version="3">
       </t>
 
       <t>
-        This document updates <xref target="RFC6487"/> with clarifications for RP implementers.
+        This document updates <xref target="RFC6487"/>.
         Refer to <xref target="Updates"/> for more details.
       </t>
 
@@ -114,7 +114,10 @@ version="3">
     <section anchor="Related">
       <name>Related Work</name>
       <t>
-        It is assumed that the reader is familiar with the terms and concepts described in "<xref target="RFC5280" format="title"/>" <xref target="RFC5280" format="default"/> and "<xref target="RFC6481" format="title"/>" <xref target="RFC6481" format="default"/>.
+        It is assumed that the reader is familiar with the terms and concepts described in
+        "<xref target="RFC5280" format="title"/>" <xref target="RFC5280" format="default"/>,
+        "<xref target="RFC6481" format="title"/>" <xref target="RFC6481" format="default"/>, and
+        "<xref target="RFC9286" format="title"/>" <xref target="RFC9286" format="default"/>.
       </t>
     </section>
 
@@ -221,8 +224,8 @@ version="3">
         <name>Normative References</name>
 
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
-        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6487.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6481.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6487.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.9286.xml"/>
 
