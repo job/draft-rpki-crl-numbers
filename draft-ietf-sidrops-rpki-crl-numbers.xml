@@ -101,7 +101,7 @@ version="3">
       </t>
 
       <t>
-        This document updates <xref target="RFC6487"/> with clarifications for RP implementers.
+        This document updates <xref target="RFC6487"/>.
         Refer to <xref target="Updates"/> for more details.
       </t>
 
@@ -114,7 +114,10 @@ version="3">
     <section anchor="Related">
       <name>Related Work</name>
       <t>
-        It is assumed that the reader is familiar with the terms and concepts described in "<xref target="RFC5280" format="title"/>" <xref target="RFC5280" format="default"/> and "<xref target="RFC6481" format="title"/>" <xref target="RFC6481" format="default"/>.
+        It is assumed that the reader is familiar with the terms and concepts described in
+        "<xref target="RFC5280" format="title"/>" <xref target="RFC5280" format="default"/>,
+        "<xref target="RFC6481" format="title"/>" <xref target="RFC6481" format="default"/>, and
+        "<xref target="RFC9286" format="title"/>" <xref target="RFC9286" format="default"/>.
       </t>
     </section>
 
@@ -125,6 +128,7 @@ version="3">
         </t>
         <ul>
           <li>Clarifications for handling of CRL Numbers for RPs.</li>
+          <li>Adjustment of step 5 of the Resource Certification Path Validation.</li>
           <li>Integration of RFC 6487 Errata 3205.</li>
         </ul>
     </section>
@@ -133,6 +137,9 @@ version="3">
 
     <section anchor="Updates">
     <name>Updates to RFC 6487</name>
+
+    <section>
+    <name>Updates to Section 5</name>
       <t>
         This section updates <xref target="RFC6487" section="5"/> as follows:
       </t>
@@ -178,6 +185,30 @@ version="3">
       </ul>
     </section>
 
+    <section>
+    <name>Update to Section 7.2</name>
+      <t>
+        This section updates <xref target="RFC6487" section="7.2"/> as follows:
+      </t>
+      <t>OLD</t>
+      <blockquote>
+      <ol start="5">
+      <li>The issuer has not revoked the certificate.
+        A revoked certificate is identified by the certificate's serial number being listed on the issuer's current CRL, as identified by the CRLDP of the certificate, the CRL is itself valid, and the public key used to verify the signature on the CRL is the same public key used to verify the certificate itself.</li>
+      </ol>
+      </blockquote>
+      <t>NEW</t>
+      <blockquote>
+      <ol start="5">
+      <li>The issuer has not revoked the certificate.
+        A revoked certificate is identified by the certificate's serial number being listed on the issuer's current CRL, as identified by the manifest containing the certificate and the CRLDP of the certificate.
+        The CRL is itself valid and the public key used to verify the signature on the CRL is the same public key used to verify the certificate itself.</li>
+      </ol>
+      </blockquote>
+    </section>
+
+    </section>
+
     <section anchor="operational">
     <name>Operational Considerations</name>
     <t>
@@ -221,8 +252,8 @@ version="3">
         <name>Normative References</name>
 
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
-        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6487.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6481.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6487.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.9286.xml"/>
 
@@ -295,7 +326,7 @@ version="3">
     <section anchor="acknowledgements" numbered="false">
       <name>Acknowledgements</name>
       <t>
-      The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this document, <contact fullname="Alberto Leiva"/>, <contact fullname="Tim Bruijnzeels"/>, and <contact fullname="Mohamed Boucadair"/> for valuable feedback.
+      The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this document, <contact fullname="Alberto Leiva"/>, <contact fullname="Tim Bruijnzeels"/>, <contact fullname="Mohamed Boucadair"/>, and <contact fullname="Geoff Huston"/> for valuable feedback.
       </t>
     </section>
   </back>
