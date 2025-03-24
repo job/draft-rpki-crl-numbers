@@ -326,7 +326,7 @@ version="3">
     <section anchor="acknowledgements" numbered="false">
       <name>Acknowledgements</name>
       <t>
-      The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this document, <contact fullname="Alberto Leiva"/>, <contact fullname="Tim Bruijnzeels"/>, and <contact fullname="Mohamed Boucadair"/> for valuable feedback.
+      The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this document, <contact fullname="Alberto Leiva"/>, <contact fullname="Tim Bruijnzeels"/>, <contact fullname="Mohamed Boucadair"/>, and <contact fullname="Geoff Huston"/> for valuable feedback.
       </t>
     </section>
   </back>
