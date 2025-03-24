@@ -128,6 +128,7 @@ version="3">
         </t>
         <ul>
           <li>Clarifications for handling of CRL Numbers for RPs.</li>
+          <li>Adjustment of step 5 of the Resource Certification Path Validation.</li>
           <li>Integration of RFC 6487 Errata 3205.</li>
         </ul>
     </section>
@@ -136,6 +137,9 @@ version="3">
 
     <section anchor="Updates">
     <name>Updates to RFC 6487</name>
+
+    <section>
+    <name>Updates to Section 5</name>
       <t>
         This section updates <xref target="RFC6487" section="5"/> as follows:
       </t>
@@ -179,6 +183,30 @@ version="3">
           </blockquote>
         </li>
       </ul>
+    </section>
+
+    <section>
+    <name>Update to Section 7.2</name>
+      <t>
+        This section updates <xref target="RFC6487" section="7.2"/> as follows:
+      </t>
+      <t>OLD</t>
+      <blockquote>
+      <ol start="5">
+      <li>The issuer has not revoked the certificate.
+        A revoked certificate is identified by the certificate's serial number being listed on the issuer's current CRL, as identified by the CRLDP of the certificate, the CRL is itself valid, and the public key used to verify the signature on the CRL is the same public key used to verify the certificate itself.</li>
+      </ol>
+      </blockquote>
+      <t>NEW</t>
+      <blockquote>
+      <ol start="5">
+      <li>The issuer has not revoked the certificate.
+        A revoked certificate is identified by the certificate's serial number being listed on the issuer's current CRL, as identified by the manifest containing the certificate and the CRLDP of the certificate.
+        The CRL is itself valid and the public key used to verify the signature on the CRL is the same public key used to verify the certificate itself.</li>
+      </ol>
+      </blockquote>
+    </section>
+
     </section>
 
     <section anchor="operational">
