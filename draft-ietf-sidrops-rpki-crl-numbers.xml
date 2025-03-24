@@ -201,7 +201,7 @@ version="3">
       <blockquote>
       <ol start="5">
       <li>The issuer has not revoked the certificate.
-        A revoked certificate is identified by the certificate's serial number being listed on the issuer's current CRL, as identified by the manifest containing the certificate and the CRLDP of the certificate.
+        A revoked certificate is identified by the certificate's serial number being listed on the issuer's current CRL, as identified by the manifest containing the certificate, and the CRLDP of the certificate.
         The CRL is itself valid and the public key used to verify the signature on the CRL is the same public key used to verify the certificate itself.</li>
       </ol>
       </blockquote>
