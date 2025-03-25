@@ -24,8 +24,8 @@ tocInclude="true"
 version="4">
 
   <front>
-    <title abbrev="RPKI CRL Number handling for RPs">
-      Relying Party Handling of Resource Public Key Infrastructure (RPKI) Certificate Revocation List (CRL) Number Extensions
+    <title abbrev="RPKI CRL Number handling">
+      Handling of Resource Public Key Infrastructure (RPKI) Certificate Revocation List (CRL) Number Extensions
     </title>
 
     <author fullname="Job Snijders" initials="J." surname="Snijders">
@@ -74,7 +74,7 @@ version="4">
 
     <abstract>
       <t>
-        This document clarifies how Resource Public Key Infrastructure (RPKI) Relying Parties (RPs) handle Certificate Revocation List (CRL) Number extensions.
+        This document revises how the Resource Public Key Infrastructure (RPKI) handles Certificate Revocation List (CRL) Number extensions.
         This document updates RFC 6487.
       </t>
     </abstract>
@@ -127,7 +127,7 @@ version="4">
           This section summarizes the significant changes between <xref target="RFC6487"/> and this document.
         </t>
         <ul>
-          <li>Clarifications for handling of CRL Numbers for RPs.</li>
+          <li>Revision of CRL Number handling.</li>
           <li>Adjustment of step 5 of the Resource Certification Path Validation.</li>
           <li>Integration of RFC 6487 Errata 3205.</li>
         </ul>
