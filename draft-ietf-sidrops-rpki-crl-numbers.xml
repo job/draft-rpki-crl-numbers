@@ -21,7 +21,7 @@ updates="6487"
 obsoletes=""
 symRefs="true"
 tocInclude="true"
-version="3">
+version="4">
 
   <front>
     <title abbrev="RPKI CRL Number handling for RPs">
