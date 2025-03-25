@@ -21,11 +21,11 @@ updates="6487"
 obsoletes=""
 symRefs="true"
 tocInclude="true"
-version="3">
+version="4">
 
   <front>
-    <title abbrev="RPKI CRL Number handling for RPs">
-      Relying Party Handling of Resource Public Key Infrastructure (RPKI) Certificate Revocation List (CRL) Number Extensions
+    <title abbrev="RPKI CRL Number handling">
+      Handling of Resource Public Key Infrastructure (RPKI) Certificate Revocation List (CRL) Number Extensions
     </title>
 
     <author fullname="Job Snijders" initials="J." surname="Snijders">
@@ -74,7 +74,7 @@ version="3">
 
     <abstract>
       <t>
-        This document clarifies how Resource Public Key Infrastructure (RPKI) Relying Parties (RPs) handle Certificate Revocation List (CRL) Number extensions.
+        This document revises how the Resource Public Key Infrastructure (RPKI) handles Certificate Revocation List (CRL) Number extensions.
         This document updates RFC 6487.
       </t>
     </abstract>
@@ -127,12 +127,27 @@ version="3">
           This section summarizes the significant changes between <xref target="RFC6487"/> and this document.
         </t>
         <ul>
-          <li>Clarifications for handling of CRL Numbers for RPs.</li>
+          <li>Revision of CRL Number handling.</li>
           <li>Adjustment of step 5 of the Resource Certification Path Validation.</li>
           <li>Integration of RFC 6487 Errata 3205.</li>
         </ul>
     </section>
 
+    </section>
+
+    <section>
+    <name>Summary</name>
+      <t>
+        This document clarifies that, in the RPKI, there is exactly one CRL appropriate and relevant for determining the revocation status of a given resource certificate.
+        It is the unique CRL object that is simultaneously:
+      </t>
+      <ul>
+        <li>the target of the certificate's CRL Distribution Points extension, and</li>
+        <li>listed in the issuing CA's current Manifest FileList and has matching hash (see <xref target="RFC9286" section="4.2.1"/>).</li>
+      </ul>
+      <t>
+        In particular, a resource certificate cannot be validated without recourse to the current Manifest of the certificate's issuer.
+      </t>
     </section>
 
     <section anchor="Updates">
@@ -201,7 +216,7 @@ version="3">
       <blockquote>
       <ol start="5">
       <li>The issuer has not revoked the certificate.
-        A revoked certificate is identified by the certificate's serial number being listed on the issuer's current CRL, as identified by the manifest containing the certificate, and the CRLDP of the certificate.
+        A revoked certificate is identified by the certificate's serial number being listed on the issuer's current CRL, as identified by the issuer's current Manifest and the CRLDP of the certificate.
         The CRL is itself valid and the public key used to verify the signature on the CRL is the same public key used to verify the certificate itself.</li>
       </ol>
       </blockquote>
@@ -223,16 +238,8 @@ version="3">
         The Security Considerations of <xref target="RFC3779"/>, <xref target="RFC5280"/>, and <xref target="RFC6487"/> apply to Resource Certificates and CRLs.
       </t>
       <t>
-        This document clarifies that, in the RPKI, there is exactly one CRL appropriate and relevant for determining the revocation status of a given resource certificate.
-        It is the unique CRL object that is simultaneously:
-      </t>
-      <ul>
-        <li>the target of the certificate's CRL Distribution Points extension, and</li>
-        <li>listed in the issuing CA's current Manifest FileList and has matching hash (see <xref target="RFC9286" section="4.2.1"/>).</li>
-      </ul>
-      <t>
-        This is a more stringent requirement than is generally used in other X.509 PKIs.
-        It is therefore important for RPs to use an implementation of the X.509 path validation algorithm that allows specifying the CRL objects to use for each of the intermediate CAs and the leaf.
+        This document explicates that, in the RPKI, the CRL listed on the certificate issuer's current Manifest is the one relevant and appropriate for determinining the revocation status of a resouce certificate.
+        By way of the hash in the manifest's FileList this provides a cryptographic guarantee on the Certification Authority's intent that this is the most recent CRL and removes possible replay vectors.
       </t>
     </section>
 
