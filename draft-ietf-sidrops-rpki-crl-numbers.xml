@@ -238,7 +238,7 @@ version="3">
         The Security Considerations of <xref target="RFC3779"/>, <xref target="RFC5280"/>, and <xref target="RFC6487"/> apply to Resource Certificates and CRLs.
       </t>
       <t>
-        This document explicates that, in the RPKI, the CRL listed on the certificate issuer's current Manifest is the one relevant and appropriate for determinining the revocation status of a resouce certificate.
+        This document explicates that, in the RPKI, the CRL listed on the certificate issuer's current Manifest is the one relevant and appropriate for determining the revocation status of a resource certificate.
         By way of the hash in the manifest's FileList this provides a cryptographic guarantee on the Certification Authority's intent that this is the most recent CRL and removes possible replay vectors.
       </t>
     </section>
