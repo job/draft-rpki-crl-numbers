@@ -129,7 +129,7 @@ version="3">
         <ul>
           <li>Revision of CRL Number handling.</li>
           <li>Adjustment of step 5 of the Resource Certification Path Validation.</li>
-          <li>Integration of RFC 6487 Errata 3205.</li>
+          <li>Integration of RFC 6487 Erratum 3205.</li>
         </ul>
     </section>
 
