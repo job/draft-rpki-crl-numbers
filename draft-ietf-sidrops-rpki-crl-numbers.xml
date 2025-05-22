@@ -11,7 +11,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
 category="std"
-docName="draft-ietf-sidrops-rpki-crl-numbers-04"
+docName="draft-ietf-sidrops-rpki-crl-numbers-05"
 ipr="trust200902"
 xml:lang="en"
 sortRefs="true"
@@ -333,7 +333,7 @@ version="3">
     <section anchor="acknowledgements" numbered="false">
       <name>Acknowledgements</name>
       <t>
-      The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this document, <contact fullname="Alberto Leiva"/>, <contact fullname="Tim Bruijnzeels"/>, <contact fullname="Mohamed Boucadair"/>, and <contact fullname="Geoff Huston"/> for valuable feedback.
+      The authors wish to thank <contact fullname="Tom Harrison"/> whose observations prompted this document, <contact fullname="Alberto Leiva"/>, <contact fullname="Tim Bruijnzeels"/>, <contact fullname="Mohamed Boucadair"/>, <contact fullname="Geoff Huston"/>, and the IESG for their valuable comments and feedback.
       </t>
     </section>
   </back>
